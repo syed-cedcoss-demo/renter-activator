@@ -1,13 +1,15 @@
+import axios from "axios";
 const main = () => {
   const zohoImportUploadApp = async () => {
     try {
-      await fetch("https://zoho-product-upload.onrender.com/");
+      const res = await axios.get("https://zoho-product-upload.onrender.com/");
+      console.log("res?.data", res?.data);
     } catch (error) {
-      console.log("error", error);
+      console.log("error in zoho upload api");
     }
   };
   setInterval(() => {
     zohoImportUploadApp();
-  }, 1000 * 60 * 10);
+  }, 1000 * 60 * 1);
 };
 main();
