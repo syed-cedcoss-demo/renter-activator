@@ -2,24 +2,21 @@ import axios from "axios";
 const main = () => {
   const zohoImportUploadApp = async () => {
     try {
-      const res = await axios.get("https://zoho-product-upload.onrender.com");
-      console.log("res?.data", res?.data);
+      await axios.get("https://zoho-product-upload.onrender.com");
     } catch (error) {
       console.log("error in zoho upload api");
     }
   };
   const zohoDesignApp = async () => {
     try {
-      const res = await axios.get("https://zoho-new-design.onrender.com");
-      console.log("res?.data", res?.data);
+      axios.get("https://zoho-new-design.onrender.com");
     } catch (error) {
       console.log("error in zoho upload api");
     }
   };
   const nodeSetupApp = async () => {
     try {
-      const res = await axios.get("https://node-setup-server.onrender.com/");
-      console.log("res?.data", res?.data);
+      await axios.get("https://node-setup-server.onrender.com/");
     } catch (error) {
       console.log("error in zoho upload api");
     }
@@ -29,6 +26,6 @@ const main = () => {
     zohoImportUploadApp();
     zohoDesignApp();
     nodeSetupApp();
-  }, 1000 * 60 * 10);
+  }, 1000 * 60 * 1);
 };
 main();
