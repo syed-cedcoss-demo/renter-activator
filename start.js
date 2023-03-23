@@ -26,6 +26,6 @@ const main = () => {
     zohoImportUploadApp();
     zohoDesignApp();
     nodeSetupApp();
-  }, 1000 * 60 * 1);
+  }, 1000 * 60 * 10);
 };
 main();
