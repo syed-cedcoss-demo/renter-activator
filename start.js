@@ -3,7 +3,9 @@ const main = () => {
   const zohoImportUploadApp = async () => {
     try {
       await axios.get("https://zoho-product-upload.onrender.com");
+      helper();
     } catch (error) {
+      helper();
       console.log("error in zoho upload api");
     }
   };
@@ -21,11 +23,14 @@ const main = () => {
       console.log("error in zoho upload api");
     }
   };
-  setInterval(() => {
-    console.log("cron job trigger");
-    zohoImportUploadApp();
-    zohoDesignApp();
-    nodeSetupApp();
-  }, 1000 * 60 * 10);
+  const helper = () => {
+    setTimeout(() => {
+      console.log("cron job trigger");
+      zohoImportUploadApp();
+      zohoDesignApp();
+      nodeSetupApp();
+    }, 1000 * 60 * 5);
+  };
+  helper();
 };
 main();
